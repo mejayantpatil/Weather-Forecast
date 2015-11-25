@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../bower_components/kendo/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="../bower_components/kendo/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="../bower_components/kendo/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="../bower_components/kendo/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="../bower_components/kendo/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="../bower_components/kendo/styles/kendo.dataviz.default.min.css" />
+
+    <script src="../bower_components/kendo/js/jquery.min.js"></script>
+    <script src="../bower_components/kendo/js/kendo.all.min.js"></script>
+</head>
+<body>
+
+<div id="example">
+    <div class="demo-section k-header">
+        <div>
+            <h4>Basic Button</h4>
+            <p>
+                <button id="primaryTextButton" class="k-primary">Primary Button</button>
+                <button id="textButton">Button</button>
+            </p>
+        </div>
+
+        <div>
+            <h4>Disabled buttons</h4>
+            <p>
+                <a id="primaryDisabledButton" class="k-primary">Disabled Primary Button</a>
+                <a id="disabledButton">Disabled Button</a>
+            </p>
+        </div>
+
+        <div>
+            <h4>Buttons with icons</h4>
+            <p>
+                <a id="iconTextButton">Filter</a>
+                <a id="kendoIconTextButton">Clear Filter</a>
+                <em id="iconButton"><span class="k-sprite">Refresh</span></em>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#primaryTextButton").kendoButton();
+
+            $("#textButton").kendoButton();
+
+            $("#primaryDisabledButton").kendoButton({
+                enable: false
+            });
+
+            $("#disabledButton").kendoButton({
+                enable: false
+            });
+
+            $("#iconTextButton").kendoButton({
+                spriteCssClass: "k-icon k-i-funnel"
+            });
+
+            $("#kendoIconTextButton").kendoButton({
+                icon: "funnel-clear"
+            });
+
+            $("#iconButton").kendoButton({
+                spriteCssClass: "k-icon k-i-refresh"
+            });
+        });
+    </script>
+
+    <style scoped>
+        .demo-section {
+            width: 400px;
+        }
+        .demo-section p {
+            margin: 0 0 30px;
+            line-height: 40px;
+        }
+        .demo-section p .k-button {
+            margin: 0 5px;
+        }
+        .k-primary {
+            min-width: 150px;
+        }
+    </style>
+</div>
+
+</body>
+</html>

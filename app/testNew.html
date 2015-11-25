@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bower_components/kendo/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="bower_components/kendo/styles/kendo.default.min.css" />
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/kendo/js/jquery.min.js"></script>
+    <script src="bower_components/kendo/js/kendo.all.min.js"></script>
+    <script src="ngApp.js"></script>
+    <script src="controller/controller.js"></script>
+</head>
+<body>
+
+    <div ng-controller="TestController">
+        <div>
+            <span class="description">Price:</span>
+            <input id="firstName" type="text" />
+        </div>
+
+        <div class="display-picker">
+            <span class="description">Date of Birth:</span>
+            <input id="datepicker" value="10/10/2011" style="width:150px;" />
+        </div>
+        <h3>Cap Size</h3>
+        <select id="size">
+            <option>S - 6 3/4"</option>
+            <option>M - 7 1/4"</option>
+            <option>L - 7 1/8"</option>
+            <option>XL - 7 5/8"</option>
+        </select>
+
+        <div>
+            <button id="textButton">Save</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#textButton").kendoButton();
+
+            $("#firstName").kendoMaskedTextBox({
+                mask:""
+            });
+
+            $("#datepicker").kendoDatePicker();
+
+            var data = [
+                { text: "Black", value: "1" },
+                { text: "Orange", value: "2" },
+                { text: "Grey", value: "3" }
+            ];
+
+            // create DropDownList from select HTML element
+            $("#size").kendoDropDownList();
+
+           var size = $("#size").data("kendoDropDownList");
+
+        });
+    </script>
+
+</body>
+</html>
